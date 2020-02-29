@@ -17,20 +17,18 @@ artifacts {
 }
 
 task loggerUpload(dependsOn: [uploadArchives, loggerSourcesJar]) {
+    //println "上传日志 ：${versionNameKey}"
 }
 
 uploadArchives {
     repositories {
         mavenDeployer {
-
-            println project.name
-
             String versionNameKey = "${project.name.replace("-", "_").toUpperCase()}_VERSION"
             String versionName = getVersionNameValue(versionNameKey)
-            println versionName
+            println "准备上传：" + project.name + versionName
 
             if (versionName == null || versionName.equals("")) {
-                project.logger.error("undefined versionName in root gradle.properties by ${versionNameKey}")
+                println "上传出错：root gradle.properties 中未定义的versionName。属性的 ${versionNameKey}"
             }
 
             pom.project {
@@ -47,10 +45,12 @@ uploadArchives {
             snapshotRepository(url: rootProject.SNAPSHOT_REPOSITORY_URL) {
                 authentication(userName: rootProject.USERNAME, password: rootProject.PASSWORD)
             }
+            println "上传完成 ：${versionNameKey}"
         }
     }
 }
 
+// 从 gradle.properties 提取版本号
 def getVersionNameValue(String key) {
     File file = rootProject.file('gradle.properties')
     String value = "";

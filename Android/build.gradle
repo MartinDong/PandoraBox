@@ -39,3 +39,39 @@ task clean(type: Delete) {
 
 //tasks.getByPath(":doraemonkit:javadocRelease").enabled = false
 //tasks.getByPath(":doraemonkit-no-op:javadocRelease").enabled = false
+
+
+def getValueFromRootProperties(String key) {
+    File file = rootProject.file('gradle.properties')
+    String value = ""
+    if (file.exists()) {
+        //加载资源
+        InputStream inputStream = file.newDataInputStream();
+        Properties properties = new Properties()
+        properties.load(inputStream)
+
+        if (properties.containsKey(key)) {
+            value = properties.getProperty(key)
+        }
+    }
+    return value
+}
+
+afterEvaluate {
+    rootProject.subprojects { project ->
+        project.afterEvaluate {
+            dependencies {
+                components {
+                    all { ComponentMetadataDetails details ->
+                        if (details.toString().endsWith("-SNAPSHOT")) {
+                            details.changing = true
+                        }
+                    }
+                }
+            }
+            it.configurations.all {
+                resolutionStrategy.cacheChangingModulesFor 0, 'minutes'
+            }
+        }
+    }
+}
