@@ -1,6 +1,8 @@
 package com.didichuxing.doraemonkit.ui.base;
 
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
@@ -17,6 +19,13 @@ public abstract class BaseActivity extends AppCompatActivity {
     private static final String TAG = "BaseActivity";
 
     private ArrayDeque<BaseFragment> mFragments = new ArrayDeque<>();
+
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        //横屏设置
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+    }
 
     public void showContent(Class<? extends BaseFragment> target) {
         showContent(target, null);

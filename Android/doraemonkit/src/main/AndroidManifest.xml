@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.didichuxing.doraemonkit">
+    package="com.didichuxing.doraemonkit" >
 
     <!-- Window -->
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
@@ -26,28 +26,31 @@
     <!-- To allow starting foreground services on Android P+ - https://developer.android.com/preview/behavior-changes#fg-svc -->
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
-    <application>
+    <application >
         <activity
             android:name=".ui.UniversalActivity"
+            android:screenOrientation="landscape"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:windowSoftInputMode="stateHidden|stateUnchanged" />
         <activity
             android:name=".ui.TranslucentActivity"
+            android:screenOrientation="landscape"
             android:theme="@style/DK.Theme.Translucent"
             android:windowSoftInputMode="stateHidden|stateUnchanged" />
         <activity
             android:name=".zxing.activity.CaptureActivity"
+            android:screenOrientation="landscape"
             android:windowSoftInputMode="stateHidden|stateUnchanged" />
 
         <provider
             android:name=".DebugFileProvider"
             android:authorities="${applicationId}.debugfileprovider"
             android:exported="false"
-            android:grantUriPermissions="true">
+            android:grantUriPermissions="true" >
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/debug_provider_paths" />
-        </provider>
+        </provider >
 
         <!--<service-->
         <!--android:name=".kit.viewcheck.DebugAccessibilityService"-->
@@ -60,6 +63,6 @@
         <!--android:resource="@xml/debug_accessibility_service_config" />-->
         <!--</service>-->
 
-    </application>
+    </application >
 
-</manifest>
+</manifest >
