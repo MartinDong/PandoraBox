@@ -1,0 +1,68 @@
+apply plugin: 'maven'
+apply plugin: 'maven-publish'
+
+task loggerSourcesJar(type: Jar) {
+    classifier = 'sources'
+    if (plugins.hasPlugin("java-library")) {
+        from sourceSets.main.java.srcDirs
+    } else if (plugins.hasPlugin("com.android.library")) {
+        from android.sourceSets.main.java.sourceFiles
+    } else if (plugins.hasPlugin('groovy')) {
+        from sourceSets.main.groovy.srcDirs
+    }
+}
+
+artifacts {
+    archives loggerSourcesJar
+}
+
+task loggerUpload(dependsOn: [uploadArchives, loggerSourcesJar]) {
+}
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+
+            println project.name
+
+            String versionNameKey = "${project.name.replace("-", "_").toUpperCase()}_VERSION"
+            String versionName = getVersionNameValue(versionNameKey)
+            println versionName
+
+            if (versionName == null || versionName.equals("")) {
+                project.logger.error("undefined versionName in root gradle.properties by ${versionNameKey}")
+            }
+
+            pom.project {
+                packaging = 'aar'
+                groupId = GROUP
+                artifactId = POM_ARTIFACT_ID
+                version = versionName
+            }
+
+            repository(url: rootProject.RELEASE_REPOSITORY_URL) {
+                authentication(userName: rootProject.USERNAME, password: rootProject.PASSWORD)
+            }
+
+            snapshotRepository(url: rootProject.SNAPSHOT_REPOSITORY_URL) {
+                authentication(userName: rootProject.USERNAME, password: rootProject.PASSWORD)
+            }
+        }
+    }
+}
+
+def getVersionNameValue(String key) {
+    File file = rootProject.file('gradle.properties')
+    String value = "";
+    if (file.exists()) {
+        //加载资源
+        InputStream inputStream = file.newDataInputStream();
+        Properties properties = new Properties()
+        properties.load(inputStream)
+
+        if (properties.containsKey(key)) {
+            value = properties.getProperty(key)
+        }
+    }
+    return value
+}
