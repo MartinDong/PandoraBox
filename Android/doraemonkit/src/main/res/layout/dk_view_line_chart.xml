@@ -4,6 +4,11 @@
     android:layout_height="100dp"
     android:background="@color/dk_color_aa000000">
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/background_info" />
+
     <TextView
         style="@style/DK.Text.White"
         android:layout_gravity="bottom"
@@ -41,4 +46,9 @@
         android:layout_marginTop="5dp"
         android:textSize="@dimen/dk_font_size_14" />
 
+    <View
+        android:layout_gravity="bottom"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/background_info" />
 </FrameLayout>

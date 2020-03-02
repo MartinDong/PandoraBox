@@ -27,10 +27,6 @@
             android:tag="closeView" />
     </FrameLayout >
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1px"
-        android:background="@color/background_info" />
 
     <FrameLayout
         android:id="@+id/fl_chart1"
@@ -54,11 +50,6 @@
 
     </FrameLayout >
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1px"
-        android:background="@color/background_info" />
-
     <FrameLayout
         android:id="@+id/fl_chart2"
         android:layout_width="match_parent"
@@ -81,10 +72,6 @@
 
     </FrameLayout >
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1px"
-        android:background="@color/background_info" />
 
     <FrameLayout
         android:id="@+id/fl_chart3"
@@ -108,8 +95,4 @@
 
     </FrameLayout >
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1px"
-        android:background="@color/background_info" />
 </LinearLayout >
