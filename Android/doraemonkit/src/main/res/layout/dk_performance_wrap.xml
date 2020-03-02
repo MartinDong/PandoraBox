@@ -3,12 +3,14 @@
     android:id="@+id/ll_performance_wrap"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:layout_gravity="bottom"
+    android:gravity="bottom"
+    android:orientation="vertical" >
 
     <FrameLayout
         android:id="@+id/fl_chart0"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content" >
 
         <com.didichuxing.doraemonkit.ui.realtime.widget.LineChart
             android:id="@+id/linechart0"
@@ -24,12 +26,12 @@
             android:padding="10dp"
             android:src="@drawable/dk_close_white"
             android:tag="closeView" />
-    </FrameLayout>
+    </FrameLayout >
 
     <FrameLayout
         android:id="@+id/fl_chart1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content" >
 
         <com.didichuxing.doraemonkit.ui.realtime.widget.LineChart
             android:id="@+id/linechart1"
@@ -46,12 +48,12 @@
             android:src="@drawable/dk_close_white"
             android:tag="closeView" />
 
-    </FrameLayout>
+    </FrameLayout >
 
     <FrameLayout
         android:id="@+id/fl_chart2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content" >
 
         <com.didichuxing.doraemonkit.ui.realtime.widget.LineChart
             android:id="@+id/linechart2"
@@ -68,12 +70,12 @@
             android:src="@drawable/dk_close_white"
             android:tag="closeView" />
 
-    </FrameLayout>
+    </FrameLayout >
 
     <FrameLayout
         android:id="@+id/fl_chart3"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content" >
 
         <com.didichuxing.doraemonkit.ui.realtime.widget.LineChart
             android:id="@+id/linechart3"
@@ -90,5 +92,5 @@
             android:src="@drawable/dk_close_white"
             android:tag="closeView" />
 
-    </FrameLayout>
-</LinearLayout>
+    </FrameLayout >
+</LinearLayout >
