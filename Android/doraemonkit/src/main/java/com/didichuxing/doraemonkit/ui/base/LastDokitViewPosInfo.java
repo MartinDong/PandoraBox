@@ -15,8 +15,8 @@ public class LastDokitViewPosInfo {
     private boolean isPortrait = true;
     private int dokitViewWidth;
     private int dokitViewHeight;
-    private float leftMarginPercent;
-    private float topMarginPercent;
+    private float leftMarginPercent=1;
+    private float topMarginPercent=1;
 
     public int getDokitViewWidth() {
         return dokitViewWidth;

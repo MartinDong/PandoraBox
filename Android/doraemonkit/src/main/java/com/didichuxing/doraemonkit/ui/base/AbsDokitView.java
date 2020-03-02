@@ -207,7 +207,15 @@ public abstract class AbsDokitView implements DokitView, TouchProxy.OnTouchEvent
         params.width = mDokitViewLayoutParams.width;
         params.height = mDokitViewLayoutParams.height;
         params.gravity = mDokitViewLayoutParams.gravity;
-        LogHelper.i(TAG, "activity===>" + mAttachActivity.get().getClass().getSimpleName() + " mTag==>" + mTag + "  params.width" + params.width + "  params.height===>" + params.height);
+
+        LogHelper.i(TAG,
+                "\n\t activity===>" + mAttachActivity.get().getClass().getSimpleName() +
+                        "\n\t mTag==>" + mTag +
+                        "\n\t params.width" + params.width +
+                        "\n\t params.height===>" + params.height +
+                        "\n\t mDokitViewLayoutParams.x===>" + mDokitViewLayoutParams.x +
+                        "\n\t mDokitViewLayoutParams.y===>" + mDokitViewLayoutParams.y
+        );
         portraitOrLandscape(params);
     }
 
@@ -282,6 +290,13 @@ public abstract class AbsDokitView implements DokitView, TouchProxy.OnTouchEvent
             params.x = mDokitViewLayoutParams.x;
             params.y = mDokitViewLayoutParams.y;
         }
+        LogHelper.i(TAG, "\n activity===>" + mAttachActivity.get().getClass().getSimpleName() +
+                "\n mTag==>" + mTag +
+                "\n params.width" + params.width +
+                "\n params.height===>" + params.height +
+                "\n mDokitViewLayoutParams.x===>" + mDokitViewLayoutParams.x +
+                "\n mDokitViewLayoutParams.y===>" + mDokitViewLayoutParams.y
+        );
     }
 
 
