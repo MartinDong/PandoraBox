@@ -568,8 +568,8 @@ public abstract class AbsDokitView implements DokitView, TouchProxy.OnTouchEvent
             mLastDokitViewPosInfo.setTopMargin(mFrameLayoutParams.topMargin);
         }
         if (tag.equals(FloatIconDokitView.class.getSimpleName())) {
-            mFrameLayoutParams.width = FloatIconDokitView.FLOAT_SIZE;
-            mFrameLayoutParams.height = FloatIconDokitView.FLOAT_SIZE;
+            mFrameLayoutParams.width = mDokitViewWidth;
+            mFrameLayoutParams.height = mDokitViewHeight;
         } else {
             mFrameLayoutParams.width = mDokitViewWidth;
             mFrameLayoutParams.height = mDokitViewHeight;
