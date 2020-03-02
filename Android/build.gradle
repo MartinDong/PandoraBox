@@ -25,14 +25,24 @@ allprojects {
         jcenter()
         maven { url 'https://www.jitpack.io' }
         maven {
-            url 'http://nexuse.qicp.vip/repository/maven-releases/'
+            url 'https://maven.aliyun.com/repository/public'
         }
         maven {
-            url 'http://nexuse.qicp.vip/repository/maven-snapshots/'
+            credentials {
+                username '3a2D35'
+                password 'p85jlwEYsT'
+            }
+            url 'https://repo.rdc.aliyun.com/repository/30326-release-fdVSfM/'
+        }
+        maven {
+            credentials {
+                username '3a2D35'
+                password 'p85jlwEYsT'
+            }
+            url 'https://repo.rdc.aliyun.com/repository/30326-snapshot-RpUw6V/'
         }
     }
 }
-
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
