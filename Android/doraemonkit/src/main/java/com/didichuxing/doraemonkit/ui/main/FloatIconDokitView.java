@@ -18,7 +18,7 @@ import com.didichuxing.doraemonkit.ui.base.DokitViewManager;
  */
 
 public class FloatIconDokitView extends AbsDokitView {
-    public static int FLOAT_SIZE = 174;
+    public static int FLOAT_SIZE = 100;
 
     @Override
     public void onCreate(Context context) {
@@ -52,8 +52,8 @@ public class FloatIconDokitView extends AbsDokitView {
     public void initDokitViewLayoutParams(DokitViewLayoutParams params) {
         params.x = FloatIconConfig.getLastPosX(getContext());
         params.y = FloatIconConfig.getLastPosY(getContext());
-//        params.width = FLOAT_SIZE;
-//        params.height = FLOAT_SIZE;
+        params.width = FLOAT_SIZE;
+        params.height = FLOAT_SIZE;
     }
 
     @Override
@@ -72,8 +72,8 @@ public class FloatIconDokitView extends AbsDokitView {
         super.onResume();
         if (isNormalMode()) {
             FrameLayout.LayoutParams params = getNormalLayoutParams();
-//            params.width = FLOAT_SIZE;
-//            params.height = FLOAT_SIZE;
+            params.width = FLOAT_SIZE;
+            params.height = FLOAT_SIZE;
             invalidate();
         }
     }

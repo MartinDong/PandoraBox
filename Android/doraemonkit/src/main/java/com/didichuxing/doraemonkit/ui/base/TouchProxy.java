@@ -3,6 +3,7 @@ package com.didichuxing.doraemonkit.ui.base;
 import android.view.MotionEvent;
 import android.view.View;
 
+import com.didichuxing.doraemonkit.util.LogHelper;
 import com.didichuxing.doraemonkit.util.UIUtils;
 
 /**
@@ -35,6 +36,7 @@ public class TouchProxy {
 
     public boolean onTouchEvent(View v, MotionEvent event) {
         int distance = UIUtils.dp2px(v.getContext(), 1) * MIN_DISTANCE_MOVE;
+        LogHelper.d("TouchProxy","TouchProxy=="+distance);
         int x = (int) event.getRawX();
         int y = (int) event.getRawY();
         switch (event.getAction()) {

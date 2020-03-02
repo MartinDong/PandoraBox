@@ -23,8 +23,8 @@ import android.view.WindowManager;
 import android.widget.FrameLayout;
 
 import com.blankj.utilcode.util.ScreenUtils;
-import com.didichuxing.doraemonkit.constant.DokitConstant;
 import com.didichuxing.doraemonkit.config.FloatIconConfig;
+import com.didichuxing.doraemonkit.constant.DokitConstant;
 import com.didichuxing.doraemonkit.ui.main.FloatIconDokitView;
 import com.didichuxing.doraemonkit.util.LogHelper;
 
@@ -568,8 +568,8 @@ public abstract class AbsDokitView implements DokitView, TouchProxy.OnTouchEvent
             mLastDokitViewPosInfo.setTopMargin(mFrameLayoutParams.topMargin);
         }
         if (tag.equals(FloatIconDokitView.class.getSimpleName())) {
-            mFrameLayoutParams.width = mDokitViewWidth;
-            mFrameLayoutParams.height = mDokitViewHeight;
+            mFrameLayoutParams.width = FloatIconDokitView.FLOAT_SIZE;
+            mFrameLayoutParams.height = FloatIconDokitView.FLOAT_SIZE;
         } else {
             mFrameLayoutParams.width = mDokitViewWidth;
             mFrameLayoutParams.height = mDokitViewHeight;
