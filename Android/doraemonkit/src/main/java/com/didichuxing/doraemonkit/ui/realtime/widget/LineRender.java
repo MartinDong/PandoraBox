@@ -77,7 +77,7 @@ public class LineRender {
         mGradientPaint.setShader(new LinearGradient(0, 0, viewWidth, viewHeight, mContext.getResources().getColor(R.color.dk_color_3300BFFF),
                 mContext.getResources().getColor(R.color.dk_color_33434352), Shader.TileMode.CLAMP));
 
-        mLabelPaint.setTextSize(mContext.getResources().getDimensionPixelSize(R.dimen.dk_font_size_10));
+        mLabelPaint.setTextSize(mContext.getResources().getDimensionPixelSize(R.dimen.dk_font_size_14));
         mLabelPaint.setColor(Color.WHITE);
         mLabelPaint.setTextAlign(Paint.Align.CENTER);
 

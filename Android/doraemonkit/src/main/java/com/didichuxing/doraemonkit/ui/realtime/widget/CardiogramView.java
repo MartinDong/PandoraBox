@@ -31,7 +31,7 @@ public class CardiogramView extends View implements Runnable {
      * The default amount of time in ms between animation frames.
      */
     private static final int DEFAULT_FRAME_DELAY = 32;
-    private static final int DEFAULT_FRAME_COUNT = 2000 / DEFAULT_FRAME_DELAY;
+    private static final int DEFAULT_FRAME_COUNT = 3000 / DEFAULT_FRAME_DELAY;
     private float mItemWidth;
     /**
      * frame count to move an item
@@ -105,19 +105,22 @@ public class CardiogramView extends View implements Runnable {
         for (int index = 0; index < Math.min(mList.size(), DEFAULT_ITEM_COUNT + 1); index++) {
             mRender.setCurrentValue(index, mList.get(index).value);
             // 倒数第二个item显示文字
-            if (index == mList.size() - 2) {
-                mRender.setShowLabel(true);
-                mRender.setLabelAlpha(1f);
-                mRender.setLabel(mList.get(index).label);
-            } else if (index == mList.size() - 3) {
-                //倒数第三个item显示渐变文字
-                mRender.setLabel(mList.get(index).label);
-                mRender.setLabelAlpha((1 - mCurrentFrameCount / (float) mTotalFrameCount));
-                mRender.setShowLabel(true);
-            } else {
-                mRender.setLabel(mList.get(index).label);
-                mRender.setShowLabel(false);
-            }
+//            if (index == mList.size() - 2) {
+//                mRender.setShowLabel(true);
+//                mRender.setLabelAlpha(1f);
+//                mRender.setLabel(mList.get(index).label);
+//            } else if (index == mList.size() - 3) {
+//                //倒数第三个item显示渐变文字
+//                mRender.setLabel(mList.get(index).label);
+//                mRender.setLabelAlpha((1 - mCurrentFrameCount / (float) mTotalFrameCount));
+//                mRender.setShowLabel(true);
+//            } else {
+//                mRender.setLabel(mList.get(index).label);
+//                mRender.setShowLabel(false);
+//            }
+            mRender.setShowLabel(true);
+            mRender.setLabelAlpha(1f);
+            mRender.setLabel(mList.get(index).label);
             if (index == mList.size() - 1) {
                 mRender.setNextValue(0);
                 mRender.setDrawRightLine(false);
