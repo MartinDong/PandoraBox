@@ -140,7 +140,7 @@ public class MainDebugActivity extends AppCompatActivity implements View.OnClick
         ).build());
 
         //for new api versions.
-        hideNavKey(this);
+        //hideNavKey(this);
     }
 
     public static void hideNavKey(Context context) {
